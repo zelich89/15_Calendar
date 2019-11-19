@@ -1,8 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+///////////////// mixins
+@mixin square-size($wh) {
+  width: $wh;
+  height: $wh;
+}
+
+//////////////////////
+
+///////////////// variables
+$main-radius: 6px;
+
+$bg-color: #0080ff;
+$disable: #ccc;
+$active: #1665D8;
+$prolong: #b9d0f3;
+$week: #999999;
+
+$white: #fff;
+$black: #000;
+///////////////////////////////// end variables
+
 body {
   background-color: $bg-color;
+  font-family: 'Roboto', sans-serif;
 }
 
 .calend {
+  position: relative;
   &--aligm {
     margin: 25px;
     padding: 25px;
@@ -15,20 +44,32 @@ body {
     background-color: $white;
   }
   &--radius {
-    border-radius: 10px;
+    border-radius: $main-radius;
+  }
+  &--dop:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: $main-radius;
+    border: 1px solid;
+    opacity: .2;
   }
   &__month {
     &--flex {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
     }
   }
   &__weeks {
     &--flex {
       display: flex;
     }
-    &--bottom {
-      margin-bottom: 20px;
+    &--margin {
+      margin-top: 15px;
+      margin-bottom: 15px;
     }
   }
   &__days {
@@ -38,159 +79,66 @@ body {
     }
   }
 }
-
-.month {
-  &__title {
-    &--display {
-      display: inline-block;
-    }
-    &--posit {
-      position: relative;
-    }
-    &--size {
-      width: 140px;
-    }
-  }
-  &__shot {
-    &--display {
-      display: flex;
-    }
-    &--size {
-      @include square-size(15px);
-      object-fit: cover;
-    }
-    &--center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    &--left {
-      transform: scaleX(-1);
-    }
-  }
-}
-
-.select-div {
-  &-inner {
-    &--posit {
-      position: relative;
-    }
-    &--size {
-      height: 30px;
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      border: 8px solid transparent;
-      border-top-color: $color2;
-      top: 50%;
-      right: 0;
-      transform: translate(-75%, -25%);
-      pointer-events: none;
-    }
-    &__select {
-      &--size {
-        width: 100%;
-        height: 100%;
-      }
-      &--border {
-        border: none;
-      }
-      &--color {
-        color: $color2;
-      }
-      &--aligm {
-        padding-left: 5px;
-      }
-      &--background {
-        background-color: rgba(0, 0, 0, 0.1);
-      }
-      &--appearance {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-      }
-    }
-  }
-}
-
 .weeks {
   &__eq {
     &--size {
       @include square-size(50px);
     }
-
     &--center {
       display: flex;
       justify-content: center;
       align-items: center;
     }
-
     &--color {
-      color: $silver;
+      color: $week;
     }
   }
 }
 
 .days {
   &__eq {
+    margin-bottom: 3px;
+    margin-top: 3px;
     &--size {
       @include square-size(50px);
     }
-
-    &--color {
-      color: $black;
+    &--prol {
+      background-color: $prolong;
     }
-
-    &--zindex {
-      z-index: 99;
-    }
-
     &--center {
       display: flex;
       justify-content: center;
       align-items: center;
     }
-
     &--active {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: $blue;
       color: $white;
-      position: relative;
-      z-index: 5;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $active;
+      }
     }
 
     &--disable {
       color: $disable;
     }
-
-    &--prol {
-      width: 50px;
-      height: 50px;
-      background-color: $lightblue;
-    }
-
-    &--end-right:after {
-      width: 50px;
-      height: 50px;
-      background-color: $lightblue;
-      position: absolute;
+    &--end-right {
       border-top-right-radius: 50%;
       border-bottom-right-radius: 50%;
-      z-index: 0;
     }
-
-    &--end-left:after {
-      width: 50px;
-      height: 50px;
-      background-color: $lightblue;
-      position: absolute;
+    &--end-left {
       border-top-left-radius: 50px;
       border-bottom-left-radius: 50px;
-      z-index: 0;
     }
   }
+}
 
+.eq {
+  &__span {
+    position: relative;
+    z-index: 1;
+  }
 }
