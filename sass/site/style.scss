@@ -1,20 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: $bg-color;
 }
 
+.two {
+  display: flex;
+  margin: 25px;
+}
+
 .calend {
   position: relative;
-  margin: 25px;
   padding: 25px;
   width: 400px;
   height: 420px;
-  border-radius: $main-radius;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
-  border: 1px solid #ccc;
+  border: 1px solid gray;
   &--bgc {
     background-color: $white;
   }
+  &:first-child {
+    border-top-left-radius: $main-radius;
+    border-bottom-left-radius: $main-radius;
+  }
+  &:last-child {
+    border-top-right-radius: $main-radius;
+    border-bottom-right-radius: $main-radius;
+  }
+
   &__month {
     &--flex {
       display: flex;
@@ -29,10 +47,8 @@ body {
     }
   }
   &__days {
-    &--flex {
       display: flex;
       flex-wrap: wrap;
-    }
   }
 }
 
@@ -53,48 +69,68 @@ body {
 }
 
 .day {
+  padding: 10px;
+  margin: auto;
+  font: bold 14px/24px Arial, sans-serif;
+  &__span {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   &__eq {
     width: calc(100% / 7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3px;
-    margin-top: 3px;
-    &--size {
-      height: 50px;
+    position: relative;
+    &:after {
+      content: " ";
+      padding-top: 100%;
+      display: block;
     }
-    &--prol {
-      background-color: $prolong;
+    &:before {
+      content: " ";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      right: 0;
+      bottom: 2px;
     }
-    &--active {
-      color: $white;
-      border-radius: 0;
-      &:after {
-        content: "";
-        position: absolute;
-        width: 13%;
-        height: 12%;
-        border-radius: 50%;
-        background-color: $active;
-      }
+    &:not(.day__active):nth-child(7n):before {
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+    &:not(.day__active):nth-child(7n - 6):before {
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
     }
     &--disable {
       color: $disable;
     }
-    &---end-right {
-      border-top-right-radius: 50%;
-      border-bottom-right-radius: 50%;
+    &--select:before {
+      background-color: $prolong;
     }
-    &---end-left {
-      border-top-left-radius: 50%;
-      border-bottom-left-radius: 50%;
-    }
+  }
+  &__start:before {
+    left: 50%;
+  }
+
+  &__stop:before {
+    right: 50%;
+  }
+  &__active .day__span {
+    background-color: $active;
+    border-radius: 50%;
+    color: $white;
   }
 }
 
 .eq {
-  &__span {/*
+  &__span {
     position: relative;
-    z-index: 1;*/
+    z-index: 1;
   }
 }
