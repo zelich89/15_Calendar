@@ -16,7 +16,7 @@
 $main-radius: 6px;
 
 $bg-color: #0080ff;
-$disable: #ccc;
+$disable: #ccс;
 $active: #1665D8;
 $prolong: #b9d0f3;
 $week: #999999;
@@ -27,35 +27,20 @@ $black: #000;
 
 body {
   background-color: $bg-color;
-  font-family: 'Roboto', sans-serif;
 }
 
 .calend {
   position: relative;
-  &--aligm {
-    margin: 25px;
-    padding: 25px;
-  }
-  &--size {
-    width: 400px;
-    height: 420px;
-  }
+  margin: 25px;
+  padding: 25px;
+  width: 400px;
+  height: 420px;
+  border-radius: $main-radius;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  border: 1px solid #ccc;
   &--bgc {
     background-color: $white;
-  }
-  &--radius {
-    border-radius: $main-radius;
-  }
-  &--dop:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: $main-radius;
-    border: 1px solid;
-    opacity: .2;
   }
   &__month {
     &--flex {
@@ -82,7 +67,7 @@ body {
 .weeks {
   &__eq {
     &--size {
-      @include square-size(50px);
+      width: 14.5%;
     }
     &--center {
       display: flex;
@@ -95,28 +80,29 @@ body {
   }
 }
 
-.days {
+.day {
   &__eq {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 3px;
     margin-top: 3px;
     &--size {
-      @include square-size(50px);
+      width: 14%;
+      height: 50px;
     }
     &--prol {
       background-color: $prolong;
-    }
-    &--center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
     }
     &--active {
       color: $white;
+      border-radius: 0;
       &:after {
         content: "";
         position: absolute;
-        width: 50px;
-        height: 50px;
+        width: 13%;
+        height: 12%;
         border-radius: 50%;
         background-color: $active;
       }
@@ -125,13 +111,13 @@ body {
     &--disable {
       color: $disable;
     }
-    &--end-right {
+    &---end-right {
       border-top-right-radius: 50%;
       border-bottom-right-radius: 50%;
     }
-    &--end-left {
-      border-top-left-radius: 50px;
-      border-bottom-left-radius: 50px;
+    &---end-left {
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
     }
   }
 }

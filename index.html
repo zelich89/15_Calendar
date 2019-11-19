@@ -31,76 +31,132 @@
 </head>
 <body>
 
-<div class="calend">
-    <div class="calend__month month">
-        <div class="month__title name">
-            <select name="" id="">
-                <option value="123">September 2018</option>
-                <option value="123">September 2018</option>
-                <option value="123">September 2018</option>
-                <option value="123">September 2018</option>
-            </select>
-        </div>
-        <div class="month__shots shots">
-            <div class="shot shot--center shot__left">
-                <a href="#">
-                    <img class="shot--size" src="https://i.imgur.com/W3iBGAp.png" alt="">
-                </a>
-            </div>
-            <a href="#">
-                <div class="shot shot--center shot__right">
-                    <img class="shot--size" src="https://i.imgur.com/W3iBGAp.png" alt="">
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="calend__weeks weeks">
-        <div class="week week--center week--color">S</div>
-        <div class="week week--center week--color">M</div>
-        <div class="week week--center week--color">T</div>
-        <div class="week week--center week--color">W</div>
-        <div class="week week--center week--color">T</div>
-        <div class="week week--center week--color">F</div>
-        <div class="week week--center week--color">S</div>
-    </div>
-    <div class="calend__days days">
-        <div class="day day--center">1</div>
-        <div class="day day--center">2</div>
-        <div class="day day--center">3</div>
-        <div class="day day--center">4</div>
-        <div class="day day--center">5</div>
-        <div class="day day--center">6</div>
-        <div class="day day--active day--center">7</div>
-        <div class="day day--center">8</div>
-        <div class="day day--center">9</div>
-        <div class="day day--center">10</div>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
-        <div class="day day--center day--end-left">11</div>
-        <div class="day day--center">12</div>
-        <div class="day day--center">13</div>
-        <div class="day day--center">14</div>
-        <div class="day day--center">15</div>
-        <div class="day day--center">16</div>
-        <div class="day day--center">17</div>
-        <div class="day day--center">18</div>
-        <div class="day day--center">19</div>
-        <div class="day day--center">20</div>
+<svg style="display: none;">
+    <symbol viewBox="0 0 10 18" id="icon-prev">
+        <g transform="matrix(-1 0 0 1 9 1)">
+            <path d="M0 0L8 8L0 16" fill="none" stroke="currentColor" stroke-width="2" />
+        </g>
+    </symbol>
+    <symbol viewBox="0 0 10 18" id="icon-next">
+        <g transform="translate(1 1)">
+            <path d="M0 0L8 8L0 16" fill="none" stroke="currentColor" stroke-width="2" />
+        </g>
+    </symbol>
+</svg>
 
-        <div class="day day--center">21</div>
-        <div class="day day--center">22</div>
-        <div class="day day--center">23</div>
-        <div class="day day--center">24</div>
-        <div class="day day--center">25</div>
-        <div class="day day--center">26</div>
-        <div class="day day--center">27</div>
-        <div class="day day--center">28</div>
-        <div class="day day--center">29</div>
-        <div class="day day--center">30</div>
-        <div class="day day--center day--dis">1</div>
-        <div class="day day--center day--dis">2</div>
-        <div class="day day--center day--dis">3</div>
-        <div class="day day--center day--dis">4</div>
-        <div class="day day--center day--dis">5</div>
+<div class="calend calend--bgc">
+    <div class="calend__month calend__month--flex">
+        September 2019
+    </div>
+    <div class="calend__weeks weeks calend__weeks--flex calend__weeks--margin">
+        <div class="weeks__eq weeks__eq--size weeks__eq--center weeks__eq--color">SUN</div>
+        <div class="weeks__eq weeks__eq--size weeks__eq--center weeks__eq--color">MON</div>
+        <div class="weeks__eq weeks__eq--size weeks__eq--center weeks__eq--color">TUE</div>
+        <div class="weeks__eq weeks__eq--size weeks__eq--center weeks__eq--color">WED</div>
+        <div class="weeks__eq weeks__eq--size weeks__eq--center weeks__eq--color">THU</div>
+        <div class="weeks__eq weeks__eq--size weeks__eq--center weeks__eq--color">FRI</div>
+        <div class="weeks__eq weeks__eq--size weeks__eq--center weeks__eq--color">SAT</div>
+    </div>
+    <div class="calend__days day calend__days--flex">
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">1</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">2</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">3</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">4</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">5</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">6</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">7</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">8</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">9</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">10</span>
+        </div>
+
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">11</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">12</span>
+        </div>
+        <div class="day__eq eq day__eq--size day__eq--prol day__eq--end-left day__eq--active">
+            <span class="eq__span">13</span>
+        </div>
+        <div class="day__eq eq day__eq--size day__eq--prol day__eq--end-right">
+            <span class="eq__span">14</span>
+        </div>
+        <div class="day__eq eq day__eq--size day__eq--prol day__eq--end-left">
+            <span class="eq__span">15</span>
+        </div>
+        <div class="day__eq eq day__eq--size day__eq--prol">
+            <span class="eq__span">16</span>
+        </div>
+        <div class="day__eq eq day__eq--size day__eq--prol">
+            <span class="eq_span">17</span>
+        </div>
+        <div class="day__eq eq day__eq--size day__eq--prol">
+            <span class="eq__span">18</span>
+        </div>
+        <div class="day__eq eq day__eq--size day__eq--prol">
+            <span class="eq__span">19</span>
+        </div>
+        <div class="day__eq eq day__eq--size day__eq--prol">
+            <span class="eq__span">20</span>
+        </div>
+
+        <div class="day__eq eq day__eq--size day__eq--prol day__eq--end-right">
+            <span class="eq__span">21</span>
+        </div>
+        <div class="day__eq eq day__eq--size day__eq--prol day__eq--end-right day__eq--active">
+            <span class="eq__span">22</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">23</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">24</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">25</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">26</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">27</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">28</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">29</span>
+        </div>
+        <div class="day__eq eq day__eq--size">
+            <span class="eq__span">30</span>
+        </div>
+        <div class="day__eq eq day__eq--size day__eq--disable">1</div>
+        <div class="day__eq eq day__eq--size day__eq--disable">2</div>
+        <div class="day__eq eq day__eq--size day__eq--disable">3</div>
+        <div class="day__eq eq day__eq--size day__eq--disable">4</div>
+        <div class="day__eq eq day__eq--size day__eq--disable">5</div>
     </div>
 </div>
 
